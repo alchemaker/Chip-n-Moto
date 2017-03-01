@@ -22,8 +22,6 @@ L298P Ardumoto - http://www.dx.com/p/l298p-avr-lpc-stm32-uno-mega-2a-motor-drive
 # Assembly
 Print off Wheels, Sensor Support, and Chassis, if you have trouble with the wheel hubs please print off 2x Wheel Hubs
 
-If you have to use the hubs please install them into the wheels with adhesive to prevent slipping.
-
 Install the rear wheel onto the chassis
 install the SG90 in a vertical position in the center using 2 provided screws.
 install the DC motors using zip-ties via the included slots and secure the motors.
