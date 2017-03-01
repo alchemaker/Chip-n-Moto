@@ -95,36 +95,36 @@ long ping(){ //Mesure la distance en cm
 void forward() { // Routines en avant
   digitalWrite(dir_a, HIGH);  //Reverse motor direction, 1 high, 2 low
   digitalWrite(dir_b, HIGH);  //Reverse motor direction, 3 low, 4 high  
-  analogWrite(pwm_a, 255);    //set both motors to run at (100/255 = 39)% duty cycle
-  analogWrite(pwm_b, 255);
+  analogWrite(pwm_a, 100);    //set both motors to run at (100/255 = 39)% duty cycle
+  analogWrite(pwm_b, 100);
 
 }
 
 void reverse() { // Routines en arrière
   digitalWrite(dir_a, LOW);  //Set motor direction, 1 low, 2 high
   digitalWrite(dir_b, LOW);  //Set motor direction, 3 high, 4 low
-  analogWrite(pwm_a, 255);   //set both motors to run at 100% duty cycle (fast)
-  analogWrite(pwm_b, 255);
+  analogWrite(pwm_a, 100);   //set both motors to run at (100/255 = 39)% duty cycle
+  analogWrite(pwm_b, 100);
 }
 
 void turnRight() { // Routines tourne à droite
 
   digitalWrite(dir_a, LOW);  //Reverse motor direction, 1 high, 2 low
   digitalWrite(dir_b, HIGH);  //Set motor direction, 3 high, 4 low
-  analogWrite(pwm_a, 255);   //set both motors to run at 100% duty cycle (fast)
-  analogWrite(pwm_b, 255);
+  analogWrite(pwm_a, 100);   //set both motors to run at (100/255 = 39)% duty cycle
+  analogWrite(pwm_b, 100);
 
 }
 void turnLeft() { // Routines tourne à gauche
   digitalWrite(dir_a, HIGH);  //Reverse motor direction, 1 high, 2 low
   digitalWrite(dir_b, LOW);  //Set motor direction, 3 high, 4 low
-  analogWrite(pwm_a, 255);   //set both motors to run at 100% duty cycle (fast)
-  analogWrite(pwm_b, 255);
+  analogWrite(pwm_a, 100);   //set both motors to run at (100/255 = 39)% duty cycle
+  analogWrite(pwm_b, 100);
 }
 
 void stopRobot() { // Routines stop 
   digitalWrite(dir_a, LOW); //Set motor direction, 1 low, 2 high
   digitalWrite(dir_b, LOW); //Set motor direction, 3 high, 4 low
-  analogWrite(pwm_a, 0);    //set both motors to run at 100% duty cycle (fast)
+  analogWrite(pwm_a, 0);    //set both motors to run at 0% duty cycle (stopped)
   analogWrite(pwm_b, 0);
 }
