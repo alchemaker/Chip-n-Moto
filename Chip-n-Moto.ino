@@ -1,7 +1,7 @@
 /************************************
 Chip'n"Moto" V1 by Stéphen Stipe
-mr.stephen.stipe@gmail.com
-Derived from Chip'n'Bot V1 by Stéphane Caviglioli and Ardumoto by Timothy Holmberg at SparkFun Electronics 
+
+derived from Chip'n'Bot V1 by Stéphane Caviglioli and Ardumoto by Timothy Holmberg at SparkFun Electronics 
 cavimaster@gmail.com and unpublished respectively
 ************************************/
 #include <Servo.h>         //inclu la librairie Servo.h
@@ -37,7 +37,7 @@ void setup() {
   digitalWrite(trigPin, LOW); 
   pinMode(echoPin, INPUT); 
  
-  servoSonar.attach(5);  //Attach the SG90 servo pwm to pin 5  
+  servoSonar.attach(5);  //Attache le servo à la pin 5
   servoSonar.write(90);
 } 
 
@@ -67,17 +67,17 @@ void loop() {            // Loop through motion tests
 
 void compareDistance()
 {
-  if (leftDistance>rightDistance) //Room to turn Left?
+  if (leftDistance>rightDistance) //Si loqué à gauche
   {
     turnLeft();
     delay(500); 
   }
-  else if (rightDistance>leftDistance) //Room to turn Right?
+  else if (rightDistance>leftDistance) //Si bloqué à droite
   {
     turnRight();
     delay(500);
   }
-   else //No Path-Backup
+   else //Si bloqué des deux cotés
   {
     reverse();
     delay(1000);
@@ -95,31 +95,34 @@ long ping(){ //Mesure la distance en cm
 void forward() { // Routines en avant
   digitalWrite(dir_a, HIGH);  //Reverse motor direction, 1 high, 2 low
   digitalWrite(dir_b, HIGH);  //Reverse motor direction, 3 low, 4 high  
-  analogWrite(pwm_a, 100);    //set both motors to run at (100/255 = 39)% duty cycle
-  analogWrite(pwm_b, 100);
+  analogWrite(pwm_a, 50);    //set both motors to run at (100/255 = 39)% duty cycle
+  analogWrite(pwm_b, 50);
 
 }
 
 void reverse() { // Routines en arrière
   digitalWrite(dir_a, LOW);  //Set motor direction, 1 low, 2 high
   digitalWrite(dir_b, LOW);  //Set motor direction, 3 high, 4 low
-  analogWrite(pwm_a, 100);   //set both motors to run at (100/255 = 39)% duty cycle
-  analogWrite(pwm_b, 100);
+  analogWrite(pwm_a, 50);   //set both motors to run at (100/255 = 39)% duty cycle
+  analogWrite(pwm_b, 50);
+  delay(1000);
 }
 
 void turnRight() { // Routines tourne à droite
 
-  digitalWrite(dir_a, LOW);  //Reverse motor direction, 1 high, 2 low
-  digitalWrite(dir_b, HIGH);  //Set motor direction, 3 high, 4 low
-  analogWrite(pwm_a, 100);   //set both motors to run at (100/255 = 39)% duty cycle
-  analogWrite(pwm_b, 100);
+  digitalWrite(dir_a, HIGH);  //Reverse motor direction, 1 high, 2 low
+  digitalWrite(dir_b, LOW);  //Set motor direction, 3 high, 4 low
+  analogWrite(pwm_a, 50);   //set both motors to run at (100/255 = 39)% duty cycle
+  analogWrite(pwm_b, 50);
+  delay(1000);
 
 }
 void turnLeft() { // Routines tourne à gauche
-  digitalWrite(dir_a, HIGH);  //Reverse motor direction, 1 high, 2 low
-  digitalWrite(dir_b, LOW);  //Set motor direction, 3 high, 4 low
-  analogWrite(pwm_a, 100);   //set both motors to run at (100/255 = 39)% duty cycle
-  analogWrite(pwm_b, 100);
+  digitalWrite(dir_a, LOW);  //Reverse motor direction, 1 high, 2 low
+  digitalWrite(dir_b, HIGH);  //Set motor direction, 3 high, 4 low
+  analogWrite(pwm_a, 50);   //set both motors to run at (100/255 = 39)% duty cycle
+  analogWrite(pwm_b, 50);
+  delay(1000);
 }
 
 void stopRobot() { // Routines stop 
